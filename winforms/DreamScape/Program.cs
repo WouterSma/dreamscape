@@ -1,3 +1,5 @@
+using DreamScape.Models;
+
 namespace DreamScape
 {
     internal static class Program
@@ -10,8 +12,16 @@ namespace DreamScape
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
+            using (var context = new AppDbContext())
+            {
+                context.Database.EnsureDeleted();
+                context.Database.EnsureCreated();
+            }
+        
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
         }
+
+
     }
 }
