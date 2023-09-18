@@ -100,3 +100,5 @@ ScaffoldingReadMe.txt
 *.vsidx
 *.vsidx
 *.v2
+*.vsidx
+winforms/DreamScape/.vs/DreamScape/DesignTimeBuild/.dtbcache.v2

@@ -7,6 +7,8 @@ namespace DreamScape
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
+        public static AppDbContext dbContext;
+
         [STAThread]
         static void Main()
         {
@@ -17,7 +19,7 @@ namespace DreamScape
                 context.Database.EnsureDeleted();
                 context.Database.EnsureCreated();
             }
-        
+            dbContext = new AppDbContext();
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
         }
