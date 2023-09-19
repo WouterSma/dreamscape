@@ -37,12 +37,13 @@ namespace DreamScape
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(514, 12);
+            pictureBox1.Location = new Point(973, 196);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(412, 375);
+            pictureBox1.Size = new Size(74, 69);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // tabImages
             // 
@@ -52,20 +53,17 @@ namespace DreamScape
             tabImages.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             tabImages.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             tabImages.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-            tabImages.Location = new Point(48, 47);
+            tabImages.Location = new Point(414, 12);
+            tabImages.Margin = new Padding(0);
             tabImages.Name = "tabImages";
-            tabImages.RowCount = 10;
-            tabImages.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            tabImages.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            tabImages.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            tabImages.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            tabImages.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            tabImages.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            tabImages.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            tabImages.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            tabImages.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            tabImages.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            tabImages.Size = new Size(300, 500);
+            tabImages.RowCount = 6;
+            tabImages.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tabImages.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tabImages.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tabImages.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tabImages.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tabImages.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            tabImages.Size = new Size(400, 480);
             tabImages.TabIndex = 1;
             // 
             // Form1
@@ -73,8 +71,8 @@ namespace DreamScape
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1262, 673);
-            Controls.Add(tabImages);
             Controls.Add(pictureBox1);
+            Controls.Add(tabImages);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
