@@ -28,25 +28,25 @@ namespace DreamScape
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            pictureBox1 = new PictureBox();
+            picSelectedItem = new PictureBox();
             tabImages = new TableLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            ((System.ComponentModel.ISupportInitialize)picSelectedItem).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // picSelectedItem
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(973, 196);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(74, 69);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            picSelectedItem.BorderStyle = BorderStyle.Fixed3D;
+            picSelectedItem.Location = new Point(850, 12);
+            picSelectedItem.Name = "picSelectedItem";
+            picSelectedItem.Size = new Size(320, 320);
+            picSelectedItem.SizeMode = PictureBoxSizeMode.StretchImage;
+            picSelectedItem.TabIndex = 0;
+            picSelectedItem.TabStop = false;
             // 
             // tabImages
             // 
+            tabImages.CellBorderStyle = TableLayoutPanelCellBorderStyle.InsetDouble;
             tabImages.ColumnCount = 5;
             tabImages.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             tabImages.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
@@ -71,19 +71,20 @@ namespace DreamScape
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1262, 673);
-            Controls.Add(pictureBox1);
+            Controls.Add(picSelectedItem);
             Controls.Add(tabImages);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picSelectedItem).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
+        private PictureBox picSelectedItem;
         private TableLayoutPanel tabImages;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
