@@ -74,7 +74,8 @@ namespace DreamScape
                         SizeMode = PictureBoxSizeMode.Zoom,
                         Dock = DockStyle.Fill,
                         Padding = new Padding(2),
-                        Margin = new Padding(0)
+                        Margin = new Padding(0),
+                        Tag = item // Storing the item object in the Tag property to use in the click event
                     };
                     panel.Controls.Add(pictureBox);
                     tabImages.Controls.Add(panel);
@@ -107,6 +108,57 @@ namespace DreamScape
             {
                 picSelectedItem.Image = clickedPictureBox.Image;
                 picSelectedItem.BorderStyle = picSelectedItem.BorderStyle;
+                Item clickedItem = clickedPictureBox.Tag as Item;
+                texItemName.Text = clickedItem.Name;
+                texItemDescription.Text = clickedItem.Description;
+                labSelectedItemRarity.Text = clickedItem.Rarity.ToString();
+                labSelectedItemDurability.Text = clickedItem.Durability.ToString();
+                labSelectedItemMagic.Text = clickedItem.Magic.ToString();
+                labSelectedItemPower.Text = clickedItem.Power.ToString();
+                labSelectedItemSpeed.Text = clickedItem.Speed.ToString();
+                labSelectedItemRarity.Text = clickedItem.Rarity.ToString();
+                labSelectedItemType.Text = clickedItem.Type.ToString();
+                switch (clickedItem.Type.ToString())
+                {
+                    case "Armor":
+                        labSelectedItemType.Text = "🛡";
+                        break;
+                    case "Weapon":
+                        labSelectedItemType.Text = "⚔";
+                        break;
+                    case "Accessory":
+                        labSelectedItemType.Text = "💍";
+                        break;
+                    default:
+                        labSelectedItemType = null;
+                        break;
+                }
+                int rarityInt = clickedItem.Rarity.Value;
+                switch (rarityInt)
+                {
+                    case int r when r < 40:
+                        panSelectedItem.BackColor = Color.LimeGreen;
+                        break;
+                    case int r when r < 60:
+                        panSelectedItem.BackColor = Color.DodgerBlue;
+                        break;
+                    case int r when r < 80:
+                        panSelectedItem.BackColor = Color.FromArgb(180, 0, 255); // Bright Purple
+                        break;
+                    case int r when r < 95:
+                        panSelectedItem.BackColor = Color.Gold;
+                        break;
+                    case int r when r <= 100:
+                        panSelectedItem.BackColor = Color.Red;
+                        break;
+                    default:
+                        panSelectedItem.BackColor = Color.Gray;
+                        break;
+                }
+
+
+
+
             }
         }
 
