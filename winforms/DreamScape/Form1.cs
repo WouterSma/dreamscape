@@ -117,7 +117,6 @@ namespace DreamScape
                 labSelectedItemPower.Text = clickedItem.Power.ToString();
                 labSelectedItemSpeed.Text = clickedItem.Speed.ToString();
                 labSelectedItemRarity.Text = clickedItem.Rarity.ToString();
-                labSelectedItemType.Text = clickedItem.Type.ToString();
                 switch (clickedItem.Type.ToString())
                 {
                     case "Armor":
@@ -130,7 +129,7 @@ namespace DreamScape
                         labSelectedItemType.Text = "💍";
                         break;
                     default:
-                        labSelectedItemType = null;
+                        labSelectedItemType.Text = "📜";
                         break;
                 }
                 int rarityInt = clickedItem.Rarity.Value;
